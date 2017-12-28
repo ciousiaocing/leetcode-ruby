@@ -14,9 +14,12 @@ def two_sum(nums, target)
   map = {}
 
   nums.each_with_index do |num, idx|
-    i = map[target - num]
-    return [i + 1, idx + 1] if i
+    return [map[target - num], idx] if map[target - num]
 
     map[num] = idx
   end
 end
+
+# try
+a = two_sum([2, 7, 11, 15],17)
+p a
