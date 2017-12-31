@@ -14,15 +14,13 @@ def roman_to_int(s)
     'M' => 1000
     }
 
-    sum = 0
-    s.chars.each_slice(2) do |a, b|
-      if b == nil
-        sum = sum + map[a]
-      elsif map[a] < map[b]
-        sum = sum - map[a] + map[b]
-      else
-        sum = sum + map[a] + map[b]
+    sum = map[s[0]]
+    s.chars.each_cons(2) do |a, b|
+      if map[a] < map[b]
+        sum = sum - map[a]*2
       end
+
+      sum = sum + map[b]
     end
     sum
 end
@@ -30,3 +28,4 @@ end
 p roman_to_int('XI')
 p roman_to_int('IX')
 p roman_to_int('DCXXI')
+p roman_to_int("MCMXCVI")
