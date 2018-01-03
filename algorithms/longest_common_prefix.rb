@@ -1,3 +1,7 @@
+# Write a function to find the longest common prefix string amongst an array of strings.
+
+
+
 def longest_common_prefix(strs)
   # 當輸入空陣列時，返回空陣列
    return '' if strs.empty?
@@ -19,7 +23,7 @@ longest_common_prefix(["aab","aac","aabc"])
 
 # each_with_index
 # ["a", "a", "b"].each_with_index { |val, index| p "index: #{index} for #{val}"}
-#  output => 
+#  output =>
 #  "index: 0 for a"
 #  "index: 1 for a"
 #  "index: 2 for b"
